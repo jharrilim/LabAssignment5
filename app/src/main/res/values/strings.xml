@@ -11,10 +11,10 @@
 
 	<!--cuisine list activity-->
 	<string name="cuisine_list_title">"Cuisines List"</string>
-	<string name="cuisine_list_instructions_txt">Here in Toronto, we may have many delicacies which may not be found anywhere else!\n\nPlease click on one of the following types of cuisines to see the restaurants for that particular cuisine type:</string>
+	<string name="cuisine_list_instructions_txt">"Here in Toronto, we may have many delicacies which may not be found anywhere else!\n\nPlease click on one of the following types of cuisines to see the restaurants for that particular cuisine type:"</string>
 
 	<!--restaurant list-->
 	<string name="restaurant_list_title">"Restaurants List"</string>
 	<string name="restaurant_list_show_btn_lbl">"Show"</string>
-	<string name="restaurant_list_instructions_txt"></string>
+	<string name="restaurant_list_instructions_txt">"If you like what you see, please click on one of the restaurants below to see the location of the restaurant on a map.\n\nAlternatively, you can select another cuisine  type from the drop down list below and click on the \"Show\" Button to see the restaurants for that particular cuisine type."</string>
 </resources>
