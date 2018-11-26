@@ -1,8 +1,8 @@
 package assignment5.comp304.josephharrisonlimkevinma.labassignment5
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import assignment5.comp304.josephharrisonlimkevinma.labassignment5.food.CuisineType
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         fun startCuisineActivity(cuisineType: CuisineType) {
             val b = Bundle()
             b.putString("cuisine", cuisineType.name)
-            startActivity(Intent(this, CuisineActivity::class.java), b)
+            startActivity(Intent(this, CuisineActivity::class.java).putExtras(b))
         }
 
         when (view!!.id) {

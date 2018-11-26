@@ -30,7 +30,7 @@
                     android:text="Asian"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/startAsianBtn"
-                    android:onClick="stars"/>
+                    android:onClick="onMenuBtnClick"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
