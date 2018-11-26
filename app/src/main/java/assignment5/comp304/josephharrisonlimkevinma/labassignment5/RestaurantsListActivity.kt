@@ -1,11 +1,14 @@
 package assignment5.comp304.josephharrisonlimkevinma.labassignment5
 
+import android.content.Intent
+import android.location.Geocoder
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.*
 import assignment5.comp304.josephharrisonlimkevinma.labassignment5.food.CuisineContent
 import assignment5.comp304.josephharrisonlimkevinma.labassignment5.food.CuisineType
 import assignment5.comp304.josephharrisonlimkevinma.labassignment5.food.Restaurant
+import java.util.*
 
 class RestaurantsListActivity : AppCompatActivity() {
 
@@ -13,6 +16,7 @@ class RestaurantsListActivity : AppCompatActivity() {
     private var _cuisineContent: CuisineContent? = null
     private var _cuisineTypeSpinner: Spinner? = null
     private var _restaurantsListListView: ListView? = null
+    private var _geocoder: Geocoder? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +26,7 @@ class RestaurantsListActivity : AppCompatActivity() {
         this._cuisineContent = CuisineContent
         this._cuisineTypeSpinner = findViewById(R.id.cuisine_type_spinner)
         this._restaurantsListListView = findViewById(R.id.restaurant_list_listview)
+        this._geocoder = Geocoder(baseContext, Locale.getDefault())
 
         this._cuisineTypeSpinner!!.adapter = ArrayAdapter<CuisineType>(
             this, android.R.layout.simple_spinner_dropdown_item, this._cuisineContent!!.Cuisines
@@ -33,6 +38,26 @@ class RestaurantsListActivity : AppCompatActivity() {
         findViewById<Button>(R.id.rest_list_show_btn).setOnClickListener {
             this._showBtnClicked()
         }
+
+        this._restaurantsListListView!!.onItemClickListener =
+                AdapterView.OnItemClickListener { _, view, position, _ ->
+                    val restaurantSelected: Restaurant =
+                        this._restaurantsListListView!!.getItemAtPosition(position) as Restaurant
+                    val address = this._geocoder!!.getFromLocationName(restaurantSelected.address, 1)
+
+                    Toast.makeText(
+                        this,
+                        "You have selected ${restaurantSelected.name}!",
+                        Toast.LENGTH_LONG
+                    ).show()
+
+                    startActivity(
+                        Intent(view.context, MapsActivity::class.java)
+                            .putExtra("address", address[0])
+                            .putExtra("restaurant_name", restaurantSelected.name)
+                    )
+
+                }
     }
 
     private fun _showBtnClicked() {

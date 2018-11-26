@@ -1,5 +1,6 @@
 package assignment5.comp304.josephharrisonlimkevinma.labassignment5
 
+import android.location.Address
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
@@ -13,6 +14,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    private var _address: Address? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +23,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        //get address
+        this._address = this.intent.extras.get("address") as Address
     }
 
     /**
@@ -36,9 +41,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(43.64, -79.38)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Toronto"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+//        val sydney = LatLng(43.64, -79.38)
+        val restaurant = LatLng(this._address!!.latitude, this._address!!.longitude)
+
+        mMap.addMarker(MarkerOptions().position(restaurant).title(this.intent.extras.get("restaurant_name") as String))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(restaurant))
         mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
     }
 }

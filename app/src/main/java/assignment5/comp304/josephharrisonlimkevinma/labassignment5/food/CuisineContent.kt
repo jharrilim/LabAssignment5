@@ -18,5 +18,6 @@ object CuisineContent {
     init {
         CuisineMap.putAll(Restaurant.american())
         CuisineMap.putAll(Restaurant.asian())
+        //TODO: Add restaurants for Breakfeast, Chinese, Indian, and Italian cuisines
     }
 }
