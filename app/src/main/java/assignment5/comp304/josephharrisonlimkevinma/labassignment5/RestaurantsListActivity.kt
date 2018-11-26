@@ -11,7 +11,6 @@ class RestaurantsListActivity : AppCompatActivity() {
 
     private var _bundle: Bundle? = null
     private var _cuisineContent: CuisineContent? = null
-    private var _selectedCuisineType: CuisineType? = null
     private var _cuisineTypeSpinner: Spinner? = null
     private var _restaurantsListListView: ListView? = null
 
@@ -28,58 +27,67 @@ class RestaurantsListActivity : AppCompatActivity() {
             this, android.R.layout.simple_spinner_dropdown_item, this._cuisineContent!!.Cuisines
         )
 
-        when (this._bundle!!.get("cuisine")) {
-            CuisineType.American -> {
-                Toast.makeText(this, "So you want to look at the dirty Americans do ya?", Toast.LENGTH_SHORT).show()
-//                startActivity(Intent(this, MapsActivity::class.java))
-                this._populateRestaurantListView(CuisineType.American)
-            }
-            CuisineType.Asian -> {
-                Toast.makeText(this, this._bundle!!.getString("cuisine"), Toast.LENGTH_SHORT).show()
-                this._populateRestaurantListView(CuisineType.Asian)
-            }
-            CuisineType.Breakfast -> {
-                Toast.makeText(this, this._bundle!!.getString("cuisine"), Toast.LENGTH_SHORT).show()
-                this._selectedCuisineType = CuisineType.Breakfast
-
-            }
-            CuisineType.Chinese -> {
-                Toast.makeText(this, this._bundle!!.getString("cuisine"), Toast.LENGTH_SHORT).show()
-                this._selectedCuisineType = CuisineType.Chinese
-
-            }
-            CuisineType.Indian -> {
-                Toast.makeText(this, this._bundle!!.getString("cuisine"), Toast.LENGTH_SHORT).show()
-                this._selectedCuisineType = CuisineType.Indian
-
-            }
-            CuisineType.Italian -> {
-                Toast.makeText(this, this._bundle!!.getString("cuisine"), Toast.LENGTH_SHORT).show()
-                this._selectedCuisineType = CuisineType.Italian
-
-            }
-        }
+        this._populateRestaurantListView(cuisineType = this._bundle!!.get("cuisine") as CuisineType)
 
         //attache event handlers
-        findViewById<Button>(R.id.rest_list_show_btn).setOnClickListener { view ->
-            this.showBtnClicked()
+        findViewById<Button>(R.id.rest_list_show_btn).setOnClickListener {
+            this._showBtnClicked()
         }
     }
 
-    fun showBtnClicked() {
+    private fun _showBtnClicked() {
         var selectedCuisineType: CuisineType =
             findViewById<Spinner>(R.id.cuisine_type_spinner).selectedItem as CuisineType
 
-        this._populateRestaurantListView(selectedCuisineType)
+        this._populateRestaurantListView(cuisineType = selectedCuisineType)
     }
 
     private fun _populateRestaurantListView(cuisineType: CuisineType) {
-        this._selectedCuisineType = cuisineType
+        //update ctrls with appropiate data
         this._cuisineTypeSpinner!!.setSelection(cuisineType.ordinal)
         this._restaurantsListListView!!.adapter = ArrayAdapter<Restaurant>(
             this,
             android.R.layout.simple_list_item_1,
             this._cuisineContent!!.CuisineMap.get(cuisineType)
         )
+
+        //provide feedback to users upon cuisine type selection made
+        when (cuisineType) {
+            CuisineType.American -> Toast.makeText(
+                this,
+                resources.getString(R.string.restaurant_list_american_sel_txt),
+                Toast.LENGTH_SHORT
+            )
+                .show()
+            CuisineType.Asian -> Toast.makeText(
+                this,
+                resources.getString(R.string.restaurant_list_asian_sel_txt),
+                Toast.LENGTH_SHORT
+            )
+                .show()
+            CuisineType.Breakfast -> Toast.makeText(
+                this,
+                resources.getString(R.string.restaurant_list_breakfast_sel_txt),
+                Toast.LENGTH_SHORT
+            ).show()
+            CuisineType.Chinese -> Toast.makeText(
+                this,
+                resources.getString(R.string.restaurant_list_chinese_sel_txt),
+                Toast.LENGTH_SHORT
+            )
+                .show()
+            CuisineType.Indian -> Toast.makeText(
+                this,
+                resources.getString(R.string.restaurant_list_indian_sel_txt),
+                Toast.LENGTH_SHORT
+            )
+                .show()
+            CuisineType.Italian -> Toast.makeText(
+                this,
+                resources.getString(R.string.restaurant_list_italian_sel_txt),
+                Toast.LENGTH_SHORT
+            )
+                .show()
+        }
     }
 }
