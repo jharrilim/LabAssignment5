@@ -2,6 +2,12 @@
 	<string name="app_name">"Lab5 M18 - JHL &amp; KM"</string>
 	<string name="title_activity_maps">Map</string>
 
+	<!--main activity-->
+	<string name="main_instructions_header_lbl">"JHL &amp; KM\'s\nRestaurant Finder (っ˘ڡ˘ς)"</string>
+	<string name="main_instructions_body_txt">"Are you new to Toronto?\n\nDo you have an insatiable palate that cannot be satisfied by plebeian grub?\n\nDo you have an unquenchable thirst for juicies to seep through your dark cavities?\n\nIf you answered yes to any of the questions above, you are in the right place ♪♪ ヽ(ˇ∀ˇ )ゞ!\n\nThis application will show you a list of restaurants found in Toronto, ON, Canada, based upon the type of cuisine you select on the next screen.\n\nNow that we have your attention, let us begin without further ado!"</string>
+	<string name="main_continue_btn_lbl">"Let\'s Go! ヽ(´▽`)/"</string>
+	<string name="main_continue_btn_clicked_txt">"ᕕ( ᐛ )ᕗ"</string>
+
 	<!--restaurant list-->
 	<string name="restaurant_list_title">"Lab5 M18 - JHL &amp; KM - Restaurants List"</string>
 	<string name="restaurant_list_show_btn_lbl">"Show"</string>

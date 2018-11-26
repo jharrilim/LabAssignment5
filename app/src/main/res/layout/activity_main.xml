@@ -7,30 +7,27 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" android:id="@+id/mainHLayout">
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_height="match_parent"
-                android:id="@+id/mainVLayout"
-                android:layout_weight="1" android:layout_width="wrap_content">
-            <Button
-                    android:text="American"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/startAmericanBtn"
-                    android:onClick="onMenuBtnClick"/>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_height="match_parent" android:id="@+id/mainVLayout2"
-                android:layout_weight="1" android:layout_width="wrap_content">
-            <Button
-                    android:text="Asian"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/startAsianBtn"
-                    android:onClick="onMenuBtnClick"/>
-        </LinearLayout>
-    </LinearLayout>
+    <TextView
+            android:text="@string/main_instructions_header_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="24dp"
+            android:id="@+id/textView2" android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+            android:text="@string/main_instructions_body_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" android:layout_marginStart="8dp"/>
+    <Button
+            android:text="@string/main_continue_btn_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/main_continue_btn" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"/>
 </android.support.constraint.ConstraintLayout>
