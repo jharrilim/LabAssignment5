@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         fun startCuisineActivity(cuisineType: CuisineType) {
             val b = Bundle()
             b.putString("cuisine", cuisineType.name)
-            startActivity(Intent(this, CuisineActivity::class.java).putExtras(b))
+            startActivity(Intent(this, RestaurantsListActivity::class.java).putExtras(b))
+//            startActivity(Intent(this, CuisineActivity::class.java).putExtras(b))
         }
 
         when (view!!.id) {

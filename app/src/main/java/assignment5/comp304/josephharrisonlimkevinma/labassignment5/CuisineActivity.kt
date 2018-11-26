@@ -11,7 +11,7 @@ class CuisineActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        bundle = savedInstanceState
+//        _bundle = savedInstanceState
         bundle = this.intent.extras
 
 //        var cuisineType: String = intent.getStringExtra("cuisine") ?: ""

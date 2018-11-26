@@ -4,7 +4,15 @@ import java.util.HashMap
 
 object CuisineContent {
 
-    val Cuisines: MutableList<String> = mutableListOf("American", "Asian", "Breakfast", "Chinese", "Indian", "Italian")
+    val Cuisines: MutableList<CuisineType> = mutableListOf(
+        CuisineType.American,
+        CuisineType.Asian,
+        CuisineType.Breakfast,
+        CuisineType.Chinese,
+        CuisineType.Indian,
+        CuisineType.Italian
+    )
+//    val Cuisines: MutableList<String> = mutableListOf("American", "Asian", "Breakfast", "Chinese", "Indian", "Italian")
 
     val CuisineMap: MutableMap<CuisineType, MutableList<Restaurant>> = HashMap()
 

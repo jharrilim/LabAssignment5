@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">"Lab5 M18 - JHL &amp; KM"</string>
+	<string name="app_name">"Lab5 M18 - JHL &amp; KM"</string>
 	<string name="title_activity_maps">Map</string>
+
+	<!--restaurant list-->
+	<string name="restaurant_list_title">"Lab5 M18 - JHL &amp; KM - Restaurants List"</string>
+	<string name="restaurant_list_show_btn_lbl">"Show"</string>
 </resources>
