@@ -12,7 +12,6 @@ object CuisineContent {
         CuisineType.Indian,
         CuisineType.Italian
     )
-//    val Cuisines: MutableList<String> = mutableListOf("American", "Asian", "Breakfast", "Chinese", "Indian", "Italian")
 
     val CuisineMap: MutableMap<CuisineType, MutableList<Restaurant>> = HashMap()
 

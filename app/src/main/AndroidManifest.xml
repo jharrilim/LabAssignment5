@@ -23,10 +23,6 @@
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
-		<activity
-				android:name=".CuisineActivity"
-				android:parentActivityName=".MainActivity">
-		</activity>
 		<!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -38,15 +34,21 @@
 		<activity
 				android:name=".MapsActivity"
 				android:label="@string/title_activity_maps"
-				android:parentActivityName=".CuisineActivity">
+				android:parentActivityName=".RestaurantsListActivity">
 		</activity>
 
 		<meta-data
 				android:name="com.google.android.geo.API_KEY"
 				android:value="@string/google_maps_key"/>
 
-		<activity android:name=".RestaurantsListActivity"
-		          android:label="@string/restaurant_list_title">
+		<activity
+				android:name=".RestaurantsListActivity"
+				android:label="@string/restaurant_list_title"
+				android:parentActivityName=".CuisinesListActivity">
+		</activity>
+		<activity android:name=".CuisinesListActivity"
+		          android:label="@string/cuisine_list_title"
+		          android:parentActivityName=".MainActivity">
 		</activity>
 	</application>
 

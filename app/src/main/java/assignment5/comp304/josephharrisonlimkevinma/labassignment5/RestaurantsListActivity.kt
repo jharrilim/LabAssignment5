@@ -28,32 +28,32 @@ class RestaurantsListActivity : AppCompatActivity() {
             this, android.R.layout.simple_spinner_dropdown_item, this._cuisineContent!!.Cuisines
         )
 
-        when (this._bundle!!.getString("cuisine")) {
-            CuisineType.American.name -> {
+        when (this._bundle!!.get("cuisine")) {
+            CuisineType.American -> {
                 Toast.makeText(this, "So you want to look at the dirty Americans do ya?", Toast.LENGTH_SHORT).show()
 //                startActivity(Intent(this, MapsActivity::class.java))
                 this._populateRestaurantListView(CuisineType.American)
             }
-            CuisineType.Asian.name -> {
+            CuisineType.Asian -> {
                 Toast.makeText(this, this._bundle!!.getString("cuisine"), Toast.LENGTH_SHORT).show()
                 this._populateRestaurantListView(CuisineType.Asian)
             }
-            CuisineType.Breakfast.name -> {
+            CuisineType.Breakfast -> {
                 Toast.makeText(this, this._bundle!!.getString("cuisine"), Toast.LENGTH_SHORT).show()
                 this._selectedCuisineType = CuisineType.Breakfast
 
             }
-            CuisineType.Chinese.name -> {
+            CuisineType.Chinese -> {
                 Toast.makeText(this, this._bundle!!.getString("cuisine"), Toast.LENGTH_SHORT).show()
                 this._selectedCuisineType = CuisineType.Chinese
 
             }
-            CuisineType.Indian.name -> {
+            CuisineType.Indian -> {
                 Toast.makeText(this, this._bundle!!.getString("cuisine"), Toast.LENGTH_SHORT).show()
                 this._selectedCuisineType = CuisineType.Indian
 
             }
-            CuisineType.Italian.name -> {
+            CuisineType.Italian -> {
                 Toast.makeText(this, this._bundle!!.getString("cuisine"), Toast.LENGTH_SHORT).show()
                 this._selectedCuisineType = CuisineType.Italian
 
