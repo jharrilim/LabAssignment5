@@ -1,6 +1,6 @@
 package assignment5.comp304.josephharrisonlimkevinma.labassignment5.food
 
-import java.util.HashMap
+import java.util.*
 
 object CuisineContent {
 
@@ -18,6 +18,9 @@ object CuisineContent {
     init {
         CuisineMap.putAll(Restaurant.american())
         CuisineMap.putAll(Restaurant.asian())
-        //TODO: Add restaurants for Breakfeast, Chinese, Indian, and Italian cuisines
+        CuisineMap.putAll(Restaurant.breakfast())
+        CuisineMap.putAll(Restaurant.chinese())
+        CuisineMap.putAll(Restaurant.indian())
+        CuisineMap.putAll(Restaurant.italian())
     }
 }
