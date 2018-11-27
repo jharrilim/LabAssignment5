@@ -1,9 +1,13 @@
 package assignment5.comp304.josephharrisonlimkevinma.labassignment5.food
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 /**
  * A dummy item representing a piece of content.
  */
-data class Restaurant(val name: String, val address: String, val details: String, val cuisineType: CuisineType) {
+@Parcelize
+data class Restaurant(val name: String, val address: String, val details: String, val cuisineType: CuisineType): Parcelable {
     override fun toString(): String = "$name\n$address"
 
     companion object {

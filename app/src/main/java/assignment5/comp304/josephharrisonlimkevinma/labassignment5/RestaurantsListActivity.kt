@@ -54,7 +54,7 @@ class RestaurantsListActivity : AppCompatActivity() {
                     startActivity(
                         Intent(view.context, MapsActivity::class.java)
                             .putExtra("address", address[0])
-                            .putExtra("restaurant_name", restaurantSelected.name)
+                            .putExtra("restaurant", restaurantSelected)
                     )
 
                 }
