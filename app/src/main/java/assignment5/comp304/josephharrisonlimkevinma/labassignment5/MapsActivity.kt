@@ -1,9 +1,8 @@
 package assignment5.comp304.josephharrisonlimkevinma.labassignment5
 
 import android.location.Address
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-
+import android.support.v7.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -46,6 +45,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         mMap.addMarker(MarkerOptions().position(restaurant).title(this.intent.extras.get("restaurant_name") as String))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(restaurant))
+        mMap.animateCamera(
+            CameraUpdateFactory.newLatLngZoom(
+                LatLng(this._address!!.latitude, this._address!!.longitude),
+                17.0f
+            )
+        )
         mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
     }
 }
