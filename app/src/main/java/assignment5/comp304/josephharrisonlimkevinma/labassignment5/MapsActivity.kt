@@ -3,6 +3,7 @@ package assignment5.comp304.josephharrisonlimkevinma.labassignment5
 import android.location.Address
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -38,7 +39,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
         // Add a marker in Sydney and move the camera
 //        val sydney = LatLng(43.64, -79.38)
         val restaurant = LatLng(this._address!!.latitude, this._address!!.longitude)
@@ -51,6 +51,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 17.0f
             )
         )
-        mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
+        mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+    }
+
+    fun onMapTypeSwitch(view: View?) {
+        if (!this::mMap.isInitialized) return
+
+        mMap.mapType = when(mMap.mapType) {
+            GoogleMap.MAP_TYPE_SATELLITE -> GoogleMap.MAP_TYPE_NORMAL
+            GoogleMap.MAP_TYPE_NORMAL -> GoogleMap.MAP_TYPE_SATELLITE
+            else -> GoogleMap.MAP_TYPE_NORMAL
+        }
     }
 }
