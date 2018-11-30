@@ -1,31 +1,16 @@
 <resources>
-    <string name="app_name">"Assignment 5"</string>
-    <string name="title_activity_maps">"Restaurant Location"</string>
-
-    <!--main activity-->
-    <string name="main_instructions_header_lbl">"JHL &amp; KM\'s\nRestaurant Finder (っ˘ڡ˘ς)"</string>
+    <string name="app_name">Assignment 5</string>
+    <string name="title_activity_maps">Restaurant Location</string>
     <string name="app_description">
 		We are a team of software engineers and do our best everyday to find the greatest outdoor eating experiences in Toronto!
 	</string>
-    <string name="main_continue_btn_lbl">"Let\'s Go! ヽ(´▽`)/"</string>
-    <string name="main_continue_btn_clicked_txt">"Marching onwards ᕕ( ᐛ )ᕗ!"</string>
-
-    <!--cuisine list activity-->
-    <string name="cuisine_list_title">"Cuisines List"</string>
     <string name="cuisines_instructions">
         What cuisine interests you the most?
     </string>
 
     <!--restaurant list-->
-    <string name="restaurant_list_title">"Restaurants List"</string>
-    <string name="restaurant_list_show_btn_lbl">"Show"</string>
-    <string name="restaurant_list_instructions_txt">"If you like what you see, please click on one of the restaurants below to see the location of the restaurant on a map.\n\nAlternatively, you can select another cuisine  type from the drop down list below and click on the \"Show\" Button to see the restaurants for that particular cuisine type."</string>
-    <string name="restaurant_list_american_sel_txt">"This is America ヽ( •_)ᕗ"</string>
-    <string name="restaurant_list_asian_sel_txt">"Looking for some exotic flavors (｡◕‿◕｡)?"</string>
-    <string name="restaurant_list_breakfast_sel_txt">"Just woke up and ready for some food 눈_눈"</string>
-    <string name="restaurant_list_chinese_sel_txt">"给我好吃的 ฅ^•ﻌ•^ฅ"</string>
-    <string name="restaurant_list_indian_sel_txt">"I want to feel the burn tomorrow щ（ﾟДﾟщ）!"</string>
-    <string name="restaurant_list_italian_sel_txt">"Dammi buon appetito ಠ‿ಠ"</string>
+    <string name="restaurant_activity_title">Restaurants</string>
+    <string name="cuisines_activity_title">Cuisines</string>
     <string name="toggle_view">Toggle View</string>
     <string name="check_cuisines_out">CHECK CUISINES OUT</string>
     <string name="app_title">OUTDOOR EATS</string>
