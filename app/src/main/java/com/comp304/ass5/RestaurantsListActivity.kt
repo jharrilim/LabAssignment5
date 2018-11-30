@@ -1,13 +1,13 @@
-package assignment5.comp304.josephharrisonlimkevinma.labassignment5
+package com.comp304.ass5
 
 import android.content.Intent
 import android.location.Geocoder
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.*
-import assignment5.comp304.josephharrisonlimkevinma.labassignment5.food.CuisineContent
-import assignment5.comp304.josephharrisonlimkevinma.labassignment5.food.CuisineType
-import assignment5.comp304.josephharrisonlimkevinma.labassignment5.food.Restaurant
+import com.comp304.ass5.food.CuisineContent
+import com.comp304.ass5.food.CuisineType
+import com.comp304.ass5.food.Restaurant
 import java.util.*
 
 class RestaurantsListActivity : AppCompatActivity() {

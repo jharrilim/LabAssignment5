@@ -1,4 +1,4 @@
-package assignment5.comp304.josephharrisonlimkevinma.labassignment5.food
+package com.comp304.ass5.food
 
 import java.util.*
 

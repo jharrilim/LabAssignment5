@@ -1,4 +1,4 @@
-package assignment5.comp304.josephharrisonlimkevinma.labassignment5.food
+package com.comp304.ass5.food
 
 enum class CuisineType {
     American, Asian, Breakfast, Chinese, Indian, Italian

@@ -1,4 +1,4 @@
-package assignment5.comp304.josephharrisonlimkevinma.labassignment5
+package com.comp304.ass5
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import assignment5.comp304.josephharrisonlimkevinma.labassignment5.food.CuisineType
+import com.comp304.ass5.food.CuisineType
 
 class MainActivity : AppCompatActivity() {
 

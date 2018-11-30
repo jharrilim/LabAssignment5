@@ -1,4 +1,4 @@
-package assignment5.comp304.josephharrisonlimkevinma.labassignment5
+package com.comp304.ass5
 
 import android.content.Intent
 import android.location.Address
@@ -6,7 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import assignment5.comp304.josephharrisonlimkevinma.labassignment5.food.Restaurant
+import com.comp304.ass5.food.Restaurant
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
