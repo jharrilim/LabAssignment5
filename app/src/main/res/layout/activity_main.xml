@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_margin="15sp"
+        android:orientation="vertical">
 
-    <TextView
-            android:text="@string/main_instructions_header_lbl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="24dp"
-            android:id="@+id/textView2" android:textSize="28sp"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-            android:text="@string/main_instructions_body_txt"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3" android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" android:layout_marginStart="8dp"/>
-    <Button
-            android:text="@string/main_continue_btn_lbl"
+            android:layout_gravity="center"
+            android:layout_margin="15sp"
+            android:text="@string/app_title"
+            android:textSize="28sp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/main_continue_btn" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+            android:layout_margin="5sp"
+            android:text="@string/app_description"
+            android:textSize="23sp" />
+
+        <Button
+            android:id="@+id/bContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="15sp"
+            android:onClick="onContinueBtnClick"
+            android:text="@string/check_cuisines_out" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
