@@ -24,4 +24,6 @@
 	<string name="restaurant_list_indian_sel_txt">"I want to feel the burn tomorrow щ（ﾟДﾟщ）!"</string>
 	<string name="restaurant_list_italian_sel_txt">"Dammi buon appetito ಠ‿ಠ"</string>
 	<string name="toggle_view">Toggle View</string>
+    <string name="checkout_activity_request_code">1</string>
+    <string name="cuisine_type_selected_label">cuisine</string>
 </resources>
