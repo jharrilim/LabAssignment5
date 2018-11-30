@@ -29,4 +29,5 @@
     <string name="toggle_view">Toggle View</string>
     <string name="check_cuisines_out">CHECK CUISINES OUT</string>
     <string name="app_title">OUTDOOR EATS</string>
+    <string name="please_select_a_restaurant">Please select a restaurant.</string>
 </resources>

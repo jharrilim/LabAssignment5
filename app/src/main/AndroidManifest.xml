@@ -34,7 +34,7 @@
 		<activity
 				android:name=".MapsActivity"
 				android:label="@string/title_activity_maps"
-				android:parentActivityName=".RestaurantsListActivity">
+				android:parentActivityName=".RestaurantsActivity">
 		</activity>
 
 		<meta-data
@@ -42,7 +42,7 @@
 				android:value="@string/google_maps_key"/>
 
 		<activity
-				android:name=".RestaurantsListActivity"
+				android:name=".RestaurantsActivity"
 				android:label="@string/restaurant_list_title"
 				android:parentActivityName=".CuisinesActivity">
 		</activity>

@@ -22,7 +22,7 @@ class CuisinesActivity : AppCompatActivity() {
         lvCuisines.onItemClickListener = AdapterView.OnItemClickListener { _, view, position, _ ->
             val cuisineSelected = lvCuisines.getItemAtPosition(position) as CuisineType
             startActivity(
-                    Intent(view.context, RestaurantsListActivity::class.java).putExtra(
+                    Intent(view.context, RestaurantsActivity::class.java).putExtra(
                             "cuisine", cuisineSelected
                     )
             )
