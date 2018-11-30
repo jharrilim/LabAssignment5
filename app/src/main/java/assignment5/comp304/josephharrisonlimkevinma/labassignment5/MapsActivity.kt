@@ -1,10 +1,12 @@
 package assignment5.comp304.josephharrisonlimkevinma.labassignment5
 
+import android.app.Activity
 import android.content.Intent
 import android.location.Address
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import android.view.View
 import assignment5.comp304.josephharrisonlimkevinma.labassignment5.food.Restaurant
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -41,6 +43,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         restaurantDescriptionTxt.text = restaurant.details
     }
 
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item!!.itemId) {
+            android.R.id.home -> {
+                val bundle = Bundle()
+                bundle.putSerializable(
+                    resources.getString(R.string.cuisine_type_selected_label),
+                    this.intent.extras.getString("cuisine")
+                )
+                setResult(Activity.RESULT_OK, Intent().putExtras(bundle))
+                finish()
+            }
+        }
+
+        return true
+    }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -69,7 +87,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     fun onMapTypeSwitch(view: View?) {
         if (!this::mMap.isInitialized) return
-        mMap.mapType = when(mMap.mapType) {
+        mMap.mapType = when (mMap.mapType) {
             GoogleMap.MAP_TYPE_SATELLITE -> GoogleMap.MAP_TYPE_NORMAL
             GoogleMap.MAP_TYPE_NORMAL -> GoogleMap.MAP_TYPE_SATELLITE
             else -> GoogleMap.MAP_TYPE_NORMAL

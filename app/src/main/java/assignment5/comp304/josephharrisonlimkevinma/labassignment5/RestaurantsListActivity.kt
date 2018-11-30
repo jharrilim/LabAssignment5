@@ -1,5 +1,6 @@
 package assignment5.comp304.josephharrisonlimkevinma.labassignment5
 
+import android.app.Activity
 import android.content.Intent
 import android.location.Geocoder
 import android.os.Bundle
@@ -14,6 +15,7 @@ class RestaurantsListActivity : AppCompatActivity() {
 
     private var _bundle: Bundle? = null
     private var _cuisineContent: CuisineContent? = null
+    private var _cuisineTypeSelected: CuisineType? = null
     private var _cuisineTypeSpinner: Spinner? = null
     private var _restaurantsListListView: ListView? = null
     private var _geocoder: Geocoder? = null
@@ -32,7 +34,11 @@ class RestaurantsListActivity : AppCompatActivity() {
             this, android.R.layout.simple_spinner_dropdown_item, this._cuisineContent!!.Cuisines
         )
 
-        this._populateRestaurantListView(cuisineType = this._bundle!!.get("cuisine") as CuisineType)
+        // did not get cuisine type from activity result return situation
+        if (this._cuisineTypeSelected == null)
+            this._cuisineTypeSelected = this._bundle!!.get("cuisine") as CuisineType
+
+        this._populateRestaurantListView(cuisineType = this._cuisineTypeSelected!!)
 
         //attache event handlers
         findViewById<Button>(R.id.rest_list_show_btn).setOnClickListener {
@@ -51,13 +57,24 @@ class RestaurantsListActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
 
-                    startActivity(
-                        Intent(view.context, MapsActivity::class.java)
+                    startActivityForResult(
+                        Intent(applicationContext, MapsActivity::class.java)
+                            .putExtra("cuisine", this._cuisineTypeSelected)
                             .putExtra("address", address[0])
-                            .putExtra("restaurant", restaurantSelected)
+                            .putExtra("restaurant", restaurantSelected),
+                        Integer.parseInt(
+                            resources.getString(R.string.checkout_activity_request_code)
+                        )
                     )
-
                 }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == Integer.parseInt(resources.getString(R.string.checkout_activity_request_code))) {
+            if (resultCode == Activity.RESULT_OK) {
+                this._cuisineTypeSelected = this._bundle!!.get("cuisine") as CuisineType
+            }
+        }
     }
 
     private fun _showBtnClicked() {
