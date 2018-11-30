@@ -13,6 +13,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+
 import kotlinx.android.synthetic.main.activity_maps.*
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -29,12 +30,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(R.layout.activity_maps)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
+                .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
         val bundle = this.intent.extras
         //get address
-        this.address = bundle.get("address") as Address
+        this.address = bundle!!.get("address") as Address
         restaurant = bundle.get("restaurant") as Restaurant
         restaurantNameTxt.text = restaurant.name
         restaurantLocationTxt.text = restaurant.address
@@ -59,17 +60,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(restaurant).title(this.restaurant.name))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(restaurant))
         mMap.animateCamera(
-            CameraUpdateFactory.newLatLngZoom(
-                LatLng(this.address!!.latitude, this.address!!.longitude),
-                17.0f
-            )
+                CameraUpdateFactory.newLatLngZoom(
+                        LatLng(this.address!!.latitude, this.address!!.longitude),
+                        17.0f
+                )
         )
         mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
     }
 
     fun onMapTypeSwitch(view: View?) {
         if (!this::mMap.isInitialized) return
-        mMap.mapType = when(mMap.mapType) {
+        mMap.mapType = when (mMap.mapType) {
             GoogleMap.MAP_TYPE_SATELLITE -> GoogleMap.MAP_TYPE_NORMAL
             GoogleMap.MAP_TYPE_NORMAL -> GoogleMap.MAP_TYPE_SATELLITE
             else -> GoogleMap.MAP_TYPE_NORMAL
