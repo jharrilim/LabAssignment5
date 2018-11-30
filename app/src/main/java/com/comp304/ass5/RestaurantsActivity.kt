@@ -25,6 +25,11 @@ class RestaurantsActivity : AppCompatActivity() {
         this._cuisineContent = CuisineContent
         this._jeoCoder = Geocoder(baseContext, Locale.getDefault())
 
+        if (intent.extras == null) {
+            startActivity(Intent(this, MainActivity::class.java))
+            return
+        }
+
         this.populateRestaurantListView(cuisineType = this.intent.extras!!.get("cuisine") as CuisineType)
 
         lvRestaurants.onItemClickListener =
