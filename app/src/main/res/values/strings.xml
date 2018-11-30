@@ -12,7 +12,9 @@
 
     <!--cuisine list activity-->
     <string name="cuisine_list_title">"Cuisines List"</string>
-    <string name="cuisine_list_instructions_txt">"Here in Toronto, we may have many delicacies which may not be found anywhere else!\n\nPlease click on one of the following types of cuisines to see the restaurants for that particular cuisine type:"</string>
+    <string name="cuisines_instructions">
+        What cuisine interests you the most?
+    </string>
 
     <!--restaurant list-->
     <string name="restaurant_list_title">"Restaurants List"</string>

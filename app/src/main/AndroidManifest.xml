@@ -44,9 +44,9 @@
 		<activity
 				android:name=".RestaurantsListActivity"
 				android:label="@string/restaurant_list_title"
-				android:parentActivityName=".CuisinesListActivity">
+				android:parentActivityName=".CuisinesActivity">
 		</activity>
-		<activity android:name=".CuisinesListActivity"
+		<activity android:name=".CuisinesActivity"
 		          android:label="@string/cuisine_list_title"
 		          android:parentActivityName=".MainActivity">
 		</activity>

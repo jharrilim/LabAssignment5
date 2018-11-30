@@ -13,6 +13,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onContinueBtnClick(view: View?) {
-        startActivity(Intent(this, CuisinesListActivity::class.java))
+        startActivity(Intent(this, CuisinesActivity::class.java))
     }
 }

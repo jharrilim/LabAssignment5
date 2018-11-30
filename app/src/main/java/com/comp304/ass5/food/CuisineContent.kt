@@ -1,16 +1,14 @@
 package com.comp304.ass5.food
 
-import java.util.*
-
 object CuisineContent {
 
     val Cuisines: MutableList<CuisineType> = mutableListOf(
-        CuisineType.American,
-        CuisineType.Asian,
-        CuisineType.Breakfast,
-        CuisineType.Chinese,
-        CuisineType.Indian,
-        CuisineType.Italian
+            CuisineType.Breakfast,
+            CuisineType.Indian,
+            CuisineType.Chinese,
+            CuisineType.Italian,
+            CuisineType.Asian,
+            CuisineType.American
     )
 
     val CuisineMap: MutableMap<CuisineType, MutableList<Restaurant>> = HashMap()
